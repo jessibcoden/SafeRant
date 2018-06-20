@@ -1,0 +1,20 @@
+﻿<div ng-controller="RantDetailController" id="rant-delete">
+
+    <div class="modal-header">
+        <h3 class="modal-title">Whoa!</h3>
+    </div>
+
+    <div class="modal-body">
+
+        <div>
+            <p>Are you sure you're over it?</p>
+        </div>
+
+        <div class="modal-footer">
+            <button type="button" class="btn btn-danger" ng-click="deleteRant(rant.Id)">Delete</button>
+            <button class="btn btn-secondary" ng-click="$dismiss('canceled')">Cancel</button>
+        </div>
+
+    </div>
+
+</div>

@@ -1,0 +1,39 @@
+﻿<div>
+
+    <h2>Oh yeah... You said that!</h2>
+
+    <form name="RantDetailForm">
+
+        <div class="form-group">
+            <label for="title">Title</label>
+            <input ng-model="rant.Title" ng-required="formInputRequired" type="text" class="form-control" id="title"></input>
+        </div>
+
+        <div class="btn-group" uib-dropdown is-open="status.isopen">
+            <button id="single-button" type="button" class="btn btn-primary" uib-dropdown-toggle ng-disabled="disabled">
+                Select Category <span class="caret"></span>
+            </button>
+            <ul class="dropdown-menu" uib-dropdown-menu role="menu" aria-labelledby="single-button">
+                <li ng-model="rant.CategoryId" ng-repeat="category in Categories" role="menuitem"><a href="#">{{category.name}}</a></li>
+            </ul>
+        </div>
+
+        <div class="form-group">
+            <label for="category">Target</label>
+            <textarea ng-model="rant.Target" ng-required="formInputRequired" type="text" class="form-control" id="target"></textarea>
+        </div>
+
+        <div class="form-group">
+            <label for="category">Body</label>
+            <textarea ng-model="rant.Body" ng-required="formInputRequired" type="text" class="form-control" id="body"></textarea>
+        </div>
+
+        <div class="row">
+            <button ng-click="UpdateRantAndClose()" type="submit" class="btn btn-primary col-md-1">Save</button>
+            <button ng-click="navigateToList()" class="btn btn-secondary col-md-1">Cancel</button>
+            <button ng-hide="!assigned === false" ng-click="launchModal('App/Partials/DeleteRantModal.html','RantDetailController')" class="btn btn-danger col-md-2 offset-1" ng-controller="ModalController">Delete Rant</button>
+        </div>
+
+    </form>
+
+</div>

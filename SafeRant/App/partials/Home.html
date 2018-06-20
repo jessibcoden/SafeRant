@@ -1,0 +1,21 @@
+﻿<div>
+    <div>
+        <h2>Keep it to yo-self!</h2>
+    </div>
+
+    <div ng-repeat="rant in rants"class="row" ng-click="rantDetailView(rant.Id)">
+
+        <div class="col-md-9">
+            <h3 sstyle="padding-top:0;">{{rant.Title}} </h3>
+            <p>{{rant.Category}}</p>
+            <p>To: {{rant.Target}}</p>
+            <p>{{rant.Body}}</p>
+        </div>
+
+    </div>
+
+
+</div>
+
+
+
